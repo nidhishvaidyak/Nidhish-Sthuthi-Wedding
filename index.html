@@ -140,14 +140,15 @@
         align-items: center;
       }
 
-      .event-text-date{
+      .event-text-date {
         font-size: 13px;
         color: #d4af37;
         line-height: 1.5;
-        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        white-space: nowrap; /* ← add this */
       }
 
-      .event-icon-date{
+      .event-icon-date {
         font-size: 15px;
         width: 20px;
         text-align: center;
@@ -517,7 +518,9 @@
           <div class="event-label">✦ Wedding Ceremony ✦</div>
           <div class="event-detail">
             <span class="event-icon-date">📅</span>
-            <div class="event-text-date"><strong>Friday, 1st May 2026</strong></div>
+            <div class="event-text-date">
+              <strong>Friday, 1st May 2026</strong>
+            </div>
           </div>
           <div class="event-detail">
             <span class="event-icon">📍</span>
@@ -543,7 +546,7 @@
           <div class="event-detail">
             <span class="event-icon-date">📅</span>
             <div class="event-text-date">
-              <strong>Saturday, 2nd May 2026 · 12:00 p.m.</strong> 
+              <strong>Saturday, 2nd May 2026 · 12:00 p.m.</strong>
             </div>
           </div>
           <div class="event-detail">
