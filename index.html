@@ -317,12 +317,12 @@
       .acc-arrow {
         width:22px; height:22px; border:1px solid rgba(212,175,55,0.4); border-radius:50%;
         display:flex; align-items:center; justify-content:center; flex-shrink:0;
-        transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1), background 0.3s;
+        transition:transform 0.28s ease, background 0.2s;
       }
       .acc-arrow svg {
         width:10px; height:10px; fill:none; stroke:#d4af37;
         stroke-width:2; stroke-linecap:round; stroke-linejoin:round;
-        transition:transform 0.4s ease;
+        transition:transform 0.28s ease;
       }
       .accordion.open .acc-arrow { background:rgba(212,175,55,0.15); }
       .accordion.open .acc-arrow svg { transform:rotate(180deg); }
@@ -335,15 +335,26 @@
       }
 
       .acc-body {
-        overflow:hidden; max-height:0;
-        transition:max-height 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.4s ease;
-        opacity:0; border:1px solid rgba(212,175,55,0.0); border-top:none;
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.3s ease, opacity 0.25s ease, border-color 0.25s ease;
+        opacity: 0;
+        border: 1px solid rgba(212,175,55,0.0);
+        border-top: none;
+        will-change: grid-template-rows, opacity;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
       }
       .accordion.open .acc-body {
-        max-height:400px; opacity:1;
-        border-color:rgba(212,175,55,0.25); padding-bottom:4px;
+        grid-template-rows: 1fr;
+        opacity: 1;
+        border-color: rgba(212,175,55,0.25);
       }
-      .acc-body-inner { padding:20px 20px 16px; background:rgba(0,0,0,0.25); }
+      .acc-body-inner {
+        overflow: hidden;
+        padding: 20px 20px 16px;
+        background: rgba(0,0,0,0.25);
+      }
 
       .event-detail { display:flex; align-items:flex-start; gap:10px; margin-bottom:12px; }
       .event-icon { font-size:14px; width:20px; text-align:center; flex-shrink:0; margin-top:2px; }
@@ -368,11 +379,11 @@
       }
       .map-link:hover { background:rgba(212,175,55,0.15); }
 
-      .accordion.open .acc-body-inner .event-detail { animation:fadeSlideIn 0.4s ease both; }
-      .accordion.open .acc-body-inner .event-detail:nth-child(1) { animation-delay:0.05s; }
-      .accordion.open .acc-body-inner .event-detail:nth-child(2) { animation-delay:0.12s; }
-      .accordion.open .acc-body-inner .muhurtham-tag { animation:fadeSlideIn 0.4s ease 0.18s both; }
-      .accordion.open .acc-body-inner .map-link { animation:fadeSlideIn 0.4s ease 0.22s both; }
+      .accordion.open .acc-body-inner .event-detail { animation:fadeSlideIn 0.25s ease both; }
+      .accordion.open .acc-body-inner .event-detail:nth-child(1) { animation-delay:0.02s; }
+      .accordion.open .acc-body-inner .event-detail:nth-child(2) { animation-delay:0.06s; }
+      .accordion.open .acc-body-inner .muhurtham-tag { animation:fadeSlideIn 0.25s ease 0.08s both; }
+      .accordion.open .acc-body-inner .map-link { animation:fadeSlideIn 0.25s ease 0.1s both; }
 
       .blessings-note {
         font-style:italic; font-size:14px; color:rgba(255,255,255,0.5); text-align:center;
